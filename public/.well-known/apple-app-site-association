@@ -1,0 +1,14 @@
+{
+  "applinks": {
+      "apps": [],
+      "details": [
+           {
+             "appIDs": [ "PMZSJ6M9RT.com.superfine.trackingdemo" ],
+             "paths": [ "NOT /e/*", "*", "/", “/archives/201?/* ]
+           }
+       ]
+   },
+   "webcredentials": {
+      "apps": [ "PMZSJ6M9RT.com.superfine.trackingdemo" ]
+   }
+}
