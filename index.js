@@ -9,6 +9,10 @@ app.get('/', function (req, res) {
    res.send('Hello World');
 })
 
+app.put('/events', function (req, res) {
+  res.json({ message: "ok" });
+})
+
 app.use(express.static(path.join(__dirname, 'public')))
     
 app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
