@@ -1,0 +1,197 @@
+import express from 'express';
+import fetch from 'node-fetch';
+import md5 from 'md5';
+
+const router = express.Router();
+
+const currencyCodes = [
+"AED","AOA","ARS","AUD","BDT",
+"BHD","BRL","BYN","CAD","CHF",
+"CLP","COP","CRC","CZK","DKK",
+"DOP","DZD","EGP","ETB","EUR",
+"GBP","GEL","GHS","GTQ","HKD",
+"HUF","IDR","ILS","INR","JOD",
+"JPY","KES","KHR","KRW","KWD",
+"KZT","LBP","LKR","MAD","MGA",
+"MMK","MUR","MXN","MYR","MZN",
+"NGN","NIO","NOK","NPR","NZD",
+"OMR","PAB","PEN","PHP","PKR",
+"PLN","PYG","RON","RUB","SAR",
+"SEK","SGD","SLL","THB","TND",
+"TRY","TWD","TZS","UAH","UGX",
+"USD","UYU","UZS","VEF","VND",
+"XAF","XOF","ZAR","ZMW"];
+
+const openExchangeRatesAPIEndpoint = 'https://openexchangerates.org/api/latest.json';
+const openExchangeRatesAPIKey = '881b31aa4c8747d8a6fa2efb5a5c956b';
+
+router.get('/', async function(req, res, next) {
+  try {
+    let currencyCodeParams = currencyCodes.join(',');
+
+    const response = await fetch(openExchangeRatesAPIEndpoint + '?' + new URLSearchParams({
+      app_id: openExchangeRatesAPIKey,
+      base: 'USD',
+      symbols: currencyCodeParams,
+      prettyprint: false,
+      show_alternative: false
+    }));
+    
+    let openExchangeData = await response.json();
+    
+    //console.log(JSON.stringify(openExchangeData));
+    
+    let ret = {}
+   
+    ret['exchange_rate_timestamp'] = openExchangeData['timestamp'];
+    ret['exchange_rates'] = openExchangeData['rates'];
+    
+    let fineMappings = [];
+    for (let i = 0; i < 64; i++)
+    {
+      let minRevenue = i == 0 ? -1 : i * 0.1;
+      let maxRevenue = i == 63 ? -1 : (i + 1) * 0.1;
+      
+      fineMappings.push({
+        fine_cv: i,
+        value_mappings: [{
+          mapping_type: 'revenue',
+          min_revenue: (minRevenue >= 0 ? minRevenue : undefined),
+          max_revenue: (maxRevenue >= 0 ? maxRevenue : undefined)
+        }]
+      });
+    }
+    
+    let coarseMappings1 = [
+    {
+      coarse_cv: 'low',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 0,
+        max_fine_cv: 9,
+      }]
+    },
+    {
+      coarse_cv: 'medium',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 10,
+        max_fine_cv: 49,
+      }]
+    },
+    {
+      coarse_cv: 'high',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 50,
+        max_fine_cv: 63,
+      }]
+    }];
+    
+    let coarseMappings2 = [
+    {
+      coarse_cv: 'low',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 0,
+        max_fine_cv: 19,
+      }]
+    },
+    {
+      coarse_cv: 'medium',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 20,
+        max_fine_cv: 49,
+      }]
+    },
+    {
+      coarse_cv: 'high',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 50,
+        max_fine_cv: 63,
+      }]
+    }];
+    
+    let coarseMappings3 = [
+    {
+      coarse_cv: 'low',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 0,
+        max_fine_cv: 49,
+      }]
+    },
+    {
+      coarse_cv: 'medium',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 50,
+        max_fine_cv: 59,
+      }]
+    },
+    {
+      coarse_cv: 'high',
+      value_mappings: [{
+        mapping_type: 'fine_cv',
+        min_fine_cv: 60
+      }]
+    }];
+    
+    let lockConditions1 = [
+    {
+      lock_condition_type: 'coarse_cv',
+      coarse_cvs: ['high']
+    },
+    {
+      lock_condition_type: 'time',
+      post_install_time: 86400
+    }];
+    
+    let lockConditions2 = [
+    {
+      lock_condition_type: 'coarse_cv',
+      coarse_cvs: ['high']
+    }];
+    
+    let lockConditions3 = [
+    {
+      lock_condition_type: 'coarse_cv',
+      coarse_cvs: ['high']
+    }];
+    
+    let window1 = {
+      fine_cv_mappings: fineMappings,
+      coarse_cv_mappings: coarseMappings1,
+      lock_conditions: lockConditions1
+    };
+    
+    let window2 = {
+      coarse_cv_mappings: coarseMappings2,
+      lock_conditions: lockConditions2
+    };
+    
+    let window3 = {
+      coarse_cv_mappings: coarseMappings3,
+      lock_conditions: lockConditions3
+    };
+    
+    let schema = {
+      window_one: window1,
+      window_two: window2,
+      window_three: window3
+    };
+    
+    ret['schema'] = schema;
+       
+    ret['schema_hash'] = md5(JSON.stringify(schema));
+    
+    res.json(ret);
+  } catch (err) {
+    console.error(`Error while getting config `, err.message);
+    next(err);
+  }
+});
+
+export { router }
