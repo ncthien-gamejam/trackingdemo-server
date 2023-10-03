@@ -39,6 +39,8 @@ router.get('/', async function(req, res, next) {
     
     if (query)
     {
+      console.log('QUERY = ' + JSON.stringify(query));
+      
       if ('schema_hash' in query)
       {
         lastSchemaHash = query['schema_hash'].toLowerCase();
