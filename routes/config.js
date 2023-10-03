@@ -22,6 +22,8 @@ const currencyCodes = [
 "USD","UYU","UZS","VEF","VND",
 "XAF","XOF","ZAR","ZMW"];
 
+const configVersion = 1;
+
 const openExchangeRatesAPIEndpoint = 'https://openexchangerates.org/api/latest.json';
 const openExchangeRatesAPIKey = '881b31aa4c8747d8a6fa2efb5a5c956b';
 
@@ -42,6 +44,8 @@ router.get('/', async function(req, res, next) {
     //console.log(JSON.stringify(openExchangeData));
     
     let ret = {}
+    
+    ret['version'] = configVersion;
    
     ret['exchange_rate_timestamp'] = openExchangeData['timestamp'];
     ret['exchange_rates'] = openExchangeData['rates'];
