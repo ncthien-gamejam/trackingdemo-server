@@ -27,28 +27,57 @@ const configVersion = 1;
 const openExchangeRatesAPIEndpoint = 'https://openexchangerates.org/api/latest.json';
 const openExchangeRatesAPIKey = '881b31aa4c8747d8a6fa2efb5a5c956b';
 
+const exchangeRatePeriod = 3 * 60 * 60; //3 hours
+
 router.get('/', async function(req, res, next) {
   try {
-    let currencyCodeParams = currencyCodes.join(',');
+    let lastSchemaHash = '';
+    
+    let lastExchangeRateTimestamp = 0;
+    
+    let query = req.query;
+    
+    if (query)
+    {
+      if ('schema_hash' in query)
+      {
+        lastSchemaHash = query['schema_hash'].toLowerCase();
+      }
+      
+      if ('exchange_rate_timestamp' in query)
+      {
+        lastExchangeRateTimestamp = query['exchange_rate_timestamp'];
+      }
+    }
+    
+    //console.log('Last Schema Hash = ' + lastSchemaHash);
+    //console.log('Last Exchange Rate Timestamp = ' + lastExchangeRateTimestamp.toString());
+    
+    let currentTime = Math.floor(Date.now()/1000);
 
-    const response = await fetch(openExchangeRatesAPIEndpoint + '?' + new URLSearchParams({
-      app_id: openExchangeRatesAPIKey,
-      base: 'USD',
-      symbols: currencyCodeParams,
-      prettyprint: false,
-      show_alternative: false
-    }));
-    
-    let openExchangeData = await response.json();
-    
-    //console.log(JSON.stringify(openExchangeData));
+    let offsetTime = currentTime - lastExchangeRateTimestamp;
     
     let ret = {}
     
-    ret['version'] = configVersion;
-   
-    ret['exchange_rate_timestamp'] = openExchangeData['timestamp'];
-    ret['exchange_rates'] = openExchangeData['rates'];
+    if (offsetTime >= exchangeRatePeriod)
+    {      
+      const response = await fetch(openExchangeRatesAPIEndpoint + '?' + new URLSearchParams({
+        app_id: openExchangeRatesAPIKey,
+        base: 'USD',
+        symbols: currencyCodes.join(','),
+        prettyprint: false,
+        show_alternative: false
+      }));
+      
+      let openExchangeData = await response.json();
+      
+      //console.log(JSON.stringify(openExchangeData));
+      
+      ret['version'] = configVersion;
+     
+      ret['exchange_rate_timestamp'] = openExchangeData['timestamp'];
+      ret['exchange_rates'] = openExchangeData['rates'];
+    }
     
     let fineMappings = [];
     for (let i = 0; i < 64; i++)
@@ -187,9 +216,13 @@ router.get('/', async function(req, res, next) {
       window_three: window3
     };
     
-    ret['schema'] = schema;
-       
-    ret['schema_hash'] = md5(JSON.stringify(schema));
+    let schemaHash = md5(JSON.stringify(schema)).toLowerCase();
+
+    if (schemaHash !== lastSchemaHash)
+    {
+      ret['schema'] = schema;
+      ret['schema_hash'] = schemaHash;
+    }
     
     res.json(ret);
   } catch (err) {
