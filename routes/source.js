@@ -1,6 +1,9 @@
 import express from 'express';
 const router = express.Router();
 
+import crypto from 'crypto';
+import biguintFormat from 'biguint-format'
+
 function getUniqueId()
 {
   if (typeof getUniqueId.counter == 'undefined' )
@@ -34,7 +37,7 @@ router.post('/', async function(req, res, next) {
       "geoValue": "0x5"
     };
     
-    let sourceEventId = getUniqueId();
+    let sourceEventId = biguintFormat(crypto.randomBytes(8), 'dec'); 
     
     let priority = (sourceType === 'navigation' /*click*/ ? 10 : 1);
     
@@ -43,17 +46,18 @@ router.post('/', async function(req, res, next) {
     let eventReportWindow = 2 * 24 * 60 * 60; //2 days
     let aggregatableReportWindow = 2 * 24 * 60 * 60; //2 days
     
-    let destination = 'android-app://com.example.store'; //package name
+    let destination = 'android-app://com.example.measurement.sampleapp'; //package name
     //let webDestination = 'https://example.store'; //eTLD+1
     let webDestination = null;
     
     let redirects = [];
     
     let debugReporting = true;
-        
+    let debugKey = biguintFormat(crypto.randomBytes(8), 'dec'); 
+       
     let headers = 
     {
-      source_event_id: sourceEventId.toString(),
+      source_event_id: sourceEventId,
       destination: destination ? destination : undefined,
       web_destination: webDestination ? webDestination : undefined,
       expiry: expiry.toString(),
@@ -62,6 +66,12 @@ router.post('/', async function(req, res, next) {
       priority: priority.toString(),
       filter_data: filterData ? filterData: undefined,
       aggregation_keys: aggregationKeys ? aggregationKeys: undefined
+    }
+    
+    if (debugReporting)
+    {
+      headers['debug_reporting'] = debugReporting;
+      headers['debug_key'] = debugKey;
     }
     
     res.set('Attribution-Reporting-Register-Source', JSON.stringify(headers));

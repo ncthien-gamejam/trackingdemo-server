@@ -14,6 +14,8 @@ import { router as configRouter } from './routes/config.js';
 import { router as sourceRouter } from './routes/source.js';
 import { router as triggerRouter } from './routes/trigger.js';
 
+import { router as reportRouter } from './routes/report.js';
+
 app.enable('trust proxy');
 
 app.use(express.static(__dirname + '/public'));
@@ -40,6 +42,8 @@ app.use("/config", configRouter);
 
 app.use("/source", sourceRouter);
 app.use("/trigger", triggerRouter);
+
+app.use("/.well-known/attribution-reporting", reportRouter);
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;

@@ -97,6 +97,11 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
+biguint-format@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/biguint-format/-/biguint-format-1.0.2.tgz#21e8d6c8259a8c9b39874ba6a060a1a8ec137f30"
+  integrity sha512-A9/8NoHnszWRAp4WCrgwe70wMd0FVDB3pXTdKs78z3pgwHRhc/BGU3uO7Wmfp9ueWD5WpmncL1OpypGnvc1R3w==
+
 biskviit@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/biskviit/-/biskviit-1.0.1.tgz#037a0cd4b71b9e331fd90a1122de17dc49e420a7"
