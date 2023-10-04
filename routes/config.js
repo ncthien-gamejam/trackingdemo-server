@@ -61,6 +61,8 @@ router.get('/', async function(req, res, next) {
     
     let ret = {}
     
+    ret['version'] = configVersion;
+    
     if (offsetTime >= exchangeRatePeriod)
     {      
       const response = await fetch(openExchangeRatesAPIEndpoint + '?' + new URLSearchParams({
@@ -74,9 +76,7 @@ router.get('/', async function(req, res, next) {
       let openExchangeData = await response.json();
       
       //console.log(JSON.stringify(openExchangeData));
-      
-      ret['version'] = configVersion;
-     
+         
       ret['exchange_rate_timestamp'] = openExchangeData['timestamp'];
       ret['exchange_rates'] = openExchangeData['rates'];
     }
