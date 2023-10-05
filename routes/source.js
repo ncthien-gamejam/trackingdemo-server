@@ -46,8 +46,8 @@ router.post('/', async function(req, res, next) {
     let eventReportWindow = 2 * 24 * 60 * 60; //2 days
     let aggregatableReportWindow = 2 * 24 * 60 * 60; //2 days
     
-    let destination = 'android-app://com.example.measurement.sampleapp'; //package name
-    //let webDestination = 'https://example.store'; //eTLD+1
+    let destination = 'android-app://com.superfine.trackingdemo'; //package name
+    //let webDestination = 'https://superfine.org'; //eTLD+1
     let webDestination = null;
     
     let redirects = [];
