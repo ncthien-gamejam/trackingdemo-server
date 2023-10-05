@@ -74,7 +74,10 @@ router.post('/', async function(req, res, next) {
       headers['debug_key'] = debugKey;
     }
     
-    res.set('Attribution-Reporting-Register-Source', JSON.stringify(headers));
+    let response = JSON.stringify(headers);
+    
+    console.log('RESPONSE = ' + response);
+    res.set('Attribution-Reporting-Register-Source', response);
     
     if (redirects)
     {
