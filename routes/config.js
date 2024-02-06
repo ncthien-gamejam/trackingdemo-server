@@ -1,6 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
 import md5 from 'md5';
+import * as fs from 'fs';
 
 const router = express.Router();
 
@@ -29,31 +30,41 @@ const openExchangeRatesAPIKey = '881b31aa4c8747d8a6fa2efb5a5c956b';
 
 const exchangeRatePeriod = 3 * 60 * 60; //3 hours
 
+const sdkConfig = JSON.parse(fs.readFileSync('./config/test.json'));
+
 router.get('/', async function(req, res, next) {
   try {
+	let lastExchangeRateTimestamp = 0;
     let lastSchemaHash = '';
-    
-    let lastExchangeRateTimestamp = 0;
+	let lastSdkConfigHash = '';
     
     let query = req.query;
     
-    if (query)
-    {
-      console.log('QUERY = ' + JSON.stringify(query));
-      
-      if ('schema_hash' in query)
-      {
-        lastSchemaHash = query['schema_hash'].toLowerCase();
-      }
-      
-      if ('exchange_rate_timestamp' in query)
-      {
-        lastExchangeRateTimestamp = query['exchange_rate_timestamp'];
-      }
-    }
-    
-    //console.log('Last Schema Hash = ' + lastSchemaHash);
+	if (query)
+	{
+		console.log('QUERY = ' + JSON.stringify(query));
+
+		if ('exchange_rate_timestamp' in query)
+		{
+			lastExchangeRateTimestamp = query['exchange_rate_timestamp'];
+		}
+
+		if ('schema_hash' in query)
+		{
+			lastSchemaHash = query['schema_hash'].toLowerCase();
+		}
+
+		if ('sdk_config_hash' in query)
+		{
+			lastSdkConfigHash = query['sdk_config_hash'].toLowerCase();
+		}
+	}
+
     //console.log('Last Exchange Rate Timestamp = ' + lastExchangeRateTimestamp.toString());
+    //console.log('Last Schema Hash = ' + lastSchemaHash);
+	//console.log('Last Config Hash = ' + lastConfigHash);
+	
+	//console.log('SDK CONFIG = ' + JSON.stringify(sdkConfig));
     
     let currentTime = Math.floor(Date.now()/1000);
 
@@ -222,9 +233,17 @@ router.get('/', async function(req, res, next) {
 
     if (schemaHash !== lastSchemaHash)
     {
-      ret['schema'] = schema;
-      ret['schema_hash'] = schemaHash;
+		ret['schema'] = schema;
+		ret['schema_hash'] = schemaHash;
     }
+	
+	let sdkConfigHash = md5(JSON.stringify(sdkConfig)).toLowerCase();
+	
+	if (sdkConfigHash !== lastSdkConfigHash)
+	{
+		ret['sdk_config'] = sdkConfig;
+		ret['sdk_config_hash'] = sdkConfigHash;
+	}
     
     res.json(ret);
   } catch (err) {

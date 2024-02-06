@@ -1,0 +1,89 @@
+{
+	"appId": "64ae1b11c3ceeb387c0cf88f",
+	"appSecret": "80d2682b206211eeae66927620615b6b",
+	"thirdPartySettings":
+	{
+		"facebookAppId": "288476210868314",
+		"instagramAppId": "3605833663007746",
+		"appleAppId": "6451180535",
+		"appleSignInClientId": "PMZSJ6M9RT",
+		"googlePlayGameServicesProjectId": "420137273716",
+		"googlePlayDeveloperAccountId": "7607779422266139562",
+		"linkedInAppId": "",
+		"qqAppId": "",
+		"weChatAppId": "",
+		"tikTokAppId": ""
+	},
+	"androidSettings":	
+	{
+		"customSchemes": ["trackingdemo"],
+		"appLinks": ["trackingdemo-server.onrender.com"]
+	},
+	"iosSettings":
+	{
+		"customSchemes": ["trackingdemo"],
+		"associatedDomains": ["trackingdemo-server.onrender.com?mode=developer"]
+	},
+	"windowsSettings":
+	{
+		"customSchemes": ["trackingdemo"]
+	},
+	"macosSettings":
+	{
+		"customSchemes": ["trackingdemo"],
+		"associatedDomains": ["trackingdemo-server.onrender.com?mode=developer"]
+	},
+	"linuxSettings":
+	{
+		"customSchemes": ["trackingdemo"]
+	},
+	"modules":
+	[
+		{
+			"type": "AppsFlyer",
+			"devKey": "GiTfmVRN4jGRtd4MQVLnNW",
+			"sendLog": true,
+			"logFilters": [],
+			"logNotFilters": [],
+			"platform": ["Unity"]
+		},
+		{
+			"type": "Tenjin",
+			"sdkKey": "X4DVRHYHGJLTVJJIOXNFUHCSW5BV6XKY",
+			"sendLog": true,
+			"logFilters": [],
+			"logNotFilters": [],
+			"platform": ["Unity"]
+		},
+		{
+			"type": "Adjust",
+			"appToken": "7vkis5dkg740",
+			"environment": "Production",
+			"eventTokenMap":
+			{
+				"test": "ng5kp8",
+				"test_revenue": "ihys91",
+				"gjsdk_crypto_payment": "jm3dwi",
+				"gjsdk_iap_success_payment": "ez975z"
+			},
+			"appSecret":
+			{
+				"secretId": "1",
+				"info1": "1097614477",
+				"info2": "108696926",
+				"info3": "595711065",
+				"info4": "1580037881"
+			},
+			"platform": ["Unity"]
+		},
+		{
+			"type": "Singular",
+			"apiKey": "superfine_99cca534",
+			"apiSecret": "7bc35c42faf54e4daaf191ea192b3ab7",
+			"sendLog": true,
+			"logFilters": [],
+			"logNotFilters": [],
+			"platform": ["Unity"]
+		}
+	]
+}
