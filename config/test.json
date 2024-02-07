@@ -78,8 +78,8 @@
 		},
 		{
 			"type": "Singular",
-			"apiKey": "superfine_99cca534",
-			"apiSecret": "7bc35c42faf54e4daaf191ea192b3ab7",
+			"sdkKey": "superfine_99cca534",
+			"sdkSecret": "7bc35c42faf54e4daaf191ea192b3ab7",
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
