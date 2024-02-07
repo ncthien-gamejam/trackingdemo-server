@@ -45,7 +45,7 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platform": ["Unity"]
+			"platforms": ["Android", "Unity"]
 		},
 		{
 			"type": "Tenjin",
@@ -53,7 +53,7 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platform": ["Unity"]
+			"platforms": ["Android", "Unity"]
 		},
 		{
 			"type": "Adjust",
@@ -74,7 +74,7 @@
 				"info3": "595711065",
 				"info4": "1580037881"
 			},
-			"platform": ["Unity"]
+			"platforms": ["Android", "Unity"]
 		},
 		{
 			"type": "Singular",
@@ -83,7 +83,7 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platform": ["Unity"]
+			"platforms": ["Android", "Unity"]
 		}
 	]
 }
