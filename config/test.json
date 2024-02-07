@@ -58,7 +58,7 @@
 		{
 			"type": "Adjust",
 			"appToken": "7vkis5dkg740",
-			"environment": "Production",
+			"environment": "production",
 			"eventTokenMap":
 			{
 				"test": "ng5kp8",
