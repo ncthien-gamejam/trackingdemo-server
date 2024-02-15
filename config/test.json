@@ -30,9 +30,7 @@
 		"appName":"Tracking Demo",
 		"bundleId":"com.superfine.trackingdemo",
 		"appVersion": "0.0.1",
-		"appBuildNumber": "2",
-		"steamBuild": true,
-		"steamAppId": 480
+		"appBuildNumber": "2"
 	},
 	"macosSettings":
 	{
