@@ -40,12 +40,20 @@
 	"modules":
 	[
 		{
+			"type": "GooglePlayBilling",
+			"platforms": ["Android"]
+		},
+		{
 			"type": "AppsFlyer",
 			"devKey": "GiTfmVRN4jGRtd4MQVLnNW",
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platforms": ["Android", "Unity"]
+			"platforms": ["Android", "iOS", "Unity"]
+		},
+		{
+			"type": "AppsFlyerAdRevenue",
+			"platforms": ["Android"]
 		},
 		{
 			"type": "Tenjin",
@@ -53,7 +61,7 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platforms": ["Android", "Unity"]
+			"platforms": ["Android", "iOS", "Unity"]
 		},
 		{
 			"type": "Adjust",
@@ -74,7 +82,7 @@
 				"info3": "595711065",
 				"info4": "1580037881"
 			},
-			"platforms": ["Android", "Unity"]
+			"platforms": ["Android", "iOS", "Unity"]
 		},
 		{
 			"type": "Singular",
@@ -83,7 +91,7 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platforms": ["Android", "Unity"]
+			"platforms": ["Android", "iOS", "Unity"]
 		}
 	]
 }
