@@ -61,7 +61,7 @@
 		},
 		{
 			"type": "AppsFlyerAdRevenue",
-			"platforms": ["Android"]
+			"platforms": ["Android", "iOS"]
 		},
 		{
 			"type": "Tenjin",
