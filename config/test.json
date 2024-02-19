@@ -45,6 +45,61 @@
 		"appVersion": "0.0.1",
 		"appBuildNumber": "2"
 	},
+	"wrapperSettings":
+	{
+		"Unity":
+		{
+			"excludedModules":
+			[
+				{
+					"type": "AppsFlyer",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "AppsFlyerAdRevenue",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Tenjin",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Adjust",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Singular",
+					"platforms": ["Android", "iOS"]
+				}
+			]
+		},
+		"Unreal":
+		{
+			"excludedModules":
+			[
+				{
+					"type": "AppsFlyer",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "AppsFlyerAdRevenue",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Tenjin",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Adjust",
+					"platforms": ["Android", "iOS"]
+				},
+				{
+					"type": "Singular",
+					"platforms": ["Android", "iOS"]
+				}
+			]
+		}
+	},
 	"modules":
 	[
 		{
