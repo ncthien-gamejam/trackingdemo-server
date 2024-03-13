@@ -59,9 +59,9 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platforms": ["Android", "iOS", "Unity"],
+			"platforms": ["Android", "iOS", "Unity", "Unreal"],
 			"excludedPlatforms":[],
-			"excludedWrappers":["Unity"]
+			"excludedWrappers":["Unity", "Unreal"]
 		},
 		{
 			"type": "AppsFlyerAdRevenue",
@@ -98,9 +98,9 @@
 				"info3": "595711065",
 				"info4": "1580037881"
 			},
-			"platforms": ["Android", "iOS", "Unity"],
+			"platforms": ["Android", "iOS", "Unity", "Unreal"],
 			"excludedPlatforms":[],
-			"excludedWrappers":["Unity"]
+			"excludedWrappers":["Unity", "Unreal"]
 		},
 		{
 			"type": "Singular",
@@ -109,9 +109,9 @@
 			"sendLog": true,
 			"logFilters": [],
 			"logNotFilters": [],
-			"platforms": ["Android", "iOS", "Unity"],
+			"platforms": ["Android", "iOS", "Unity", "Unreal"],
 			"excludedPlatforms":[],
-			"excludedWrappers":["Unity"]
+			"excludedWrappers":["Unity", "Unreal"]
 		}
 	]
 }
