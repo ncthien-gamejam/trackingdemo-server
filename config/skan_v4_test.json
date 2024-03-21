@@ -1,0 +1,612 @@
+{
+    "window_one": {
+        "fine_cv_mappings": [{
+                "fine_cv": 0,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "max_revenue": 0.01
+                    }
+                ]
+            }, {
+                "fine_cv": 1,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.01,
+                        "max_revenue": 0.02
+                    }
+                ]
+            }, {
+                "fine_cv": 2,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.02,
+                        "max_revenue": 0.03
+                    }
+                ]
+            }, {
+                "fine_cv": 3,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.03,
+                        "max_revenue": 0.04
+                    }
+                ]
+            }, {
+                "fine_cv": 4,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.04,
+                        "max_revenue": 0.05
+                    }
+                ]
+            }, {
+                "fine_cv": 5,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.05,
+                        "max_revenue": 0.06
+                    }
+                ]
+            }, {
+                "fine_cv": 6,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.06,
+                        "max_revenue": 0.07
+                    }
+                ]
+            }, {
+                "fine_cv": 7,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.07,
+                        "max_revenue": 0.08
+                    }
+                ]
+            }, {
+                "fine_cv": 8,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.08,
+                        "max_revenue": 0.09
+                    }
+                ]
+            }, {
+                "fine_cv": 9,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.09,
+                        "max_revenue": 0.1
+                    }
+                ]
+            }, {
+                "fine_cv": 10,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.1,
+                        "max_revenue": 0.11
+                    }
+                ]
+            }, {
+                "fine_cv": 11,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.11,
+                        "max_revenue": 0.12
+                    }
+                ]
+            }, {
+                "fine_cv": 12,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.12,
+                        "max_revenue": 0.13
+                    }
+                ]
+            }, {
+                "fine_cv": 13,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.13,
+                        "max_revenue": 0.14
+                    }
+                ]
+            }, {
+                "fine_cv": 14,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.14,
+                        "max_revenue": 0.15
+                    }
+                ]
+            }, {
+                "fine_cv": 15,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.15,
+                        "max_revenue": 0.16
+                    }
+                ]
+            }, {
+                "fine_cv": 16,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.16,
+                        "max_revenue": 0.17
+                    }
+                ]
+            }, {
+                "fine_cv": 17,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.17,
+                        "max_revenue": 0.18
+                    }
+                ]
+            }, {
+                "fine_cv": 18,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.18,
+                        "max_revenue": 0.19
+                    }
+                ]
+            }, {
+                "fine_cv": 19,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.19,
+                        "max_revenue": 0.2
+                    }
+                ]
+            }, {
+                "fine_cv": 20,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.2,
+                        "max_revenue": 0.21
+                    }
+                ]
+            }, {
+                "fine_cv": 21,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.21,
+                        "max_revenue": 0.22
+                    }
+                ]
+            }, {
+                "fine_cv": 22,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.22,
+                        "max_revenue": 0.23
+                    }
+                ]
+            }, {
+                "fine_cv": 23,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.23,
+                        "max_revenue": 0.24
+                    }
+                ]
+            }, {
+                "fine_cv": 24,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.24,
+                        "max_revenue": 0.25
+                    }
+                ]
+            }, {
+                "fine_cv": 25,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.25,
+                        "max_revenue": 0.26
+                    }
+                ]
+            }, {
+                "fine_cv": 26,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.26,
+                        "max_revenue": 0.27
+                    }
+                ]
+            }, {
+                "fine_cv": 27,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.27,
+                        "max_revenue": 0.28
+                    }
+                ]
+            }, {
+                "fine_cv": 28,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.28,
+                        "max_revenue": 0.29
+                    }
+                ]
+            }, {
+                "fine_cv": 29,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.29,
+                        "max_revenue": 0.3
+                    }
+                ]
+            }, {
+                "fine_cv": 30,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.3,
+                        "max_revenue": 0.31
+                    }
+                ]
+            }, {
+                "fine_cv": 31,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.31,
+                        "max_revenue": 0.32
+                    }
+                ]
+            }, {
+                "fine_cv": 32,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.32,
+                        "max_revenue": 0.33
+                    }
+                ]
+            }, {
+                "fine_cv": 33,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.33,
+                        "max_revenue": 0.34
+                    }
+                ]
+            }, {
+                "fine_cv": 34,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.34,
+                        "max_revenue": 0.35
+                    }
+                ]
+            }, {
+                "fine_cv": 35,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.35,
+                        "max_revenue": 0.36
+                    }
+                ]
+            }, {
+                "fine_cv": 36,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.36,
+                        "max_revenue": 0.37
+                    }
+                ]
+            }, {
+                "fine_cv": 37,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.37,
+                        "max_revenue": 0.38
+                    }
+                ]
+            }, {
+                "fine_cv": 38,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.38,
+                        "max_revenue": 0.39
+                    }
+                ]
+            }, {
+                "fine_cv": 39,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.39,
+                        "max_revenue": 0.4
+                    }
+                ]
+            }, {
+                "fine_cv": 40,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.4,
+                        "max_revenue": 0.41
+                    }
+                ]
+            }, {
+                "fine_cv": 41,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.41,
+                        "max_revenue": 0.42
+                    }
+                ]
+            }, {
+                "fine_cv": 42,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.42,
+                        "max_revenue": 0.43
+                    }
+                ]
+            }, {
+                "fine_cv": 43,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.43,
+                        "max_revenue": 0.44
+                    }
+                ]
+            }, {
+                "fine_cv": 44,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.44,
+                        "max_revenue": 0.45
+                    }
+                ]
+            }, {
+                "fine_cv": 45,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.45,
+                        "max_revenue": 0.46
+                    }
+                ]
+            }, {
+                "fine_cv": 46,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.46,
+                        "max_revenue": 0.47
+                    }
+                ]
+            }, {
+                "fine_cv": 47,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.47,
+                        "max_revenue": 0.48
+                    }
+                ]
+            }, {
+                "fine_cv": 48,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.48,
+                        "max_revenue": 0.49
+                    }
+                ]
+            }, {
+                "fine_cv": 49,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.49,
+                        "max_revenue": 0.5
+                    }
+                ]
+            }, {
+                "fine_cv": 50,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.5,
+                        "max_revenue": 0.51
+                    }
+                ]
+            }, {
+                "fine_cv": 51,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.51,
+                        "max_revenue": 0.52
+                    }
+                ]
+            }, {
+                "fine_cv": 52,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.52,
+                        "max_revenue": 0.53
+                    }
+                ]
+            }, {
+                "fine_cv": 53,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.53,
+                        "max_revenue": 0.54
+                    }
+                ]
+            }, {
+                "fine_cv": 54,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.54,
+                        "max_revenue": 0.55
+                    }
+                ]
+            }, {
+                "fine_cv": 55,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.55,
+                        "max_revenue": 0.56
+                    }
+                ]
+            }, {
+                "fine_cv": 56,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.56,
+                        "max_revenue": 0.57
+                    }
+                ]
+            }, {
+                "fine_cv": 57,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.57,
+                        "max_revenue": 0.58
+                    }
+                ]
+            }, {
+                "fine_cv": 58,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.58,
+                        "max_revenue": 0.59
+                    }
+                ]
+            }, {
+                "fine_cv": 59,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.59,
+                        "max_revenue": 0.6
+                    }
+                ]
+            }, {
+                "fine_cv": 60,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.6,
+                        "max_revenue": 0.61
+                    }
+                ]
+            }, {
+                "fine_cv": 61,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.61,
+                        "max_revenue": 0.62
+                    }
+                ]
+            }, {
+                "fine_cv": 62,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.62,
+                        "max_revenue": 0.63
+                    }
+                ]
+            }, {
+                "fine_cv": 63,
+                "value_mappings": [{
+                        "mapping_type": "revenue",
+                        "min_revenue": 0.63
+                    }
+                ]
+            }
+        ],
+        "coarse_cv_mappings": [{
+                "coarse_cv": "low",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 0,
+                        "max_fine_cv": 9
+                    }
+                ]
+            }, {
+                "coarse_cv": "medium",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 10,
+                        "max_fine_cv": 49
+                    }
+                ]
+            }, {
+                "coarse_cv": "high",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 50,
+                        "max_fine_cv": 63
+                    }
+                ]
+            }
+        ],
+        "lock_conditions": [{
+                "lock_condition_type": "coarse_cv",
+                "coarse_cvs": ["high"]
+            }
+        ]
+    },
+    "window_two": {
+        "coarse_cv_mappings": [{
+                "coarse_cv": "low",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 0,
+                        "max_fine_cv": 19
+                    }
+                ]
+            }, {
+                "coarse_cv": "medium",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 20,
+                        "max_fine_cv": 49
+                    }
+                ]
+            }, {
+                "coarse_cv": "high",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 50,
+                        "max_fine_cv": 63
+                    }
+                ]
+            }
+        ],
+        "lock_conditions": [{
+                "lock_condition_type": "coarse_cv",
+                "coarse_cvs": ["high"]
+            }
+        ]
+    },
+    "window_three": {
+        "coarse_cv_mappings": [{
+                "coarse_cv": "low",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 0,
+                        "max_fine_cv": 49
+                    }
+                ]
+            }, {
+                "coarse_cv": "medium",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 50,
+                        "max_fine_cv": 59
+                    }
+                ]
+            }, {
+                "coarse_cv": "high",
+                "value_mappings": [{
+                        "mapping_type": "fine_cv",
+                        "min_fine_cv": 60
+                    }
+                ]
+            }
+        ],
+        "lock_conditions": [{
+                "lock_condition_type": "coarse_cv",
+                "coarse_cvs": ["high"]
+            }
+        ]
+    }
+}

@@ -10,10 +10,10 @@ const __dirname = path.dirname(__filename);
 const port = process.env.PORT || 3001
 
 import { router as configRouter } from './routes/config.js';
+import { router as skanV4Router } from './routes/skan_v4.js';
 
 import { router as sourceRouter } from './routes/source.js';
 import { router as triggerRouter } from './routes/trigger.js';
-
 import { router as reportRouter } from './routes/report.js';
 
 app.enable('trust proxy');
@@ -39,6 +39,7 @@ app.put('/events', function (req, res) {
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/config", configRouter);
+app.use("/skan_v4", skanV4Router);
 
 app.use("/source", sourceRouter);
 app.use("/trigger", triggerRouter);

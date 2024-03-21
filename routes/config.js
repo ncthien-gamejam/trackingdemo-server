@@ -30,6 +30,7 @@ const openExchangeRatesAPIKey = '881b31aa4c8747d8a6fa2efb5a5c956b';
 
 const exchangeRatePeriod = 3 * 60 * 60; //3 hours
 
+const skanSchema = JSON.parse(fs.readFileSync('./config/skan_v4_test.json'));
 const sdkConfig = JSON.parse(fs.readFileSync('./config/test.json'));
 
 router.get('/', async function(req, res, next) {
@@ -101,148 +102,11 @@ router.get('/', async function(req, res, next) {
 		  ret['exchange_rates'] = openExchangeData['rates'];
 		}
 		
-		let fineMappings = [];
-		for (let i = 0; i < 64; i++)
-		{
-		  let minRevenue = i == 0 ? -1 : i * 0.1;
-		  let maxRevenue = i == 63 ? -1 : (i + 1) * 0.1;
-		  
-		  fineMappings.push({
-			fine_cv: i,
-			value_mappings: [{
-			  mapping_type: 'revenue',
-			  min_revenue: (minRevenue >= 0 ? minRevenue : undefined),
-			  max_revenue: (maxRevenue >= 0 ? maxRevenue : undefined)
-			}]
-		  });
-		}
-		
-		let coarseMappings1 = [
-		{
-		  coarse_cv: 'low',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 0,
-			max_fine_cv: 9,
-		  }]
-		},
-		{
-		  coarse_cv: 'medium',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 10,
-			max_fine_cv: 49,
-		  }]
-		},
-		{
-		  coarse_cv: 'high',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 50,
-			max_fine_cv: 63,
-		  }]
-		}];
-		
-		let coarseMappings2 = [
-		{
-		  coarse_cv: 'low',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 0,
-			max_fine_cv: 19,
-		  }]
-		},
-		{
-		  coarse_cv: 'medium',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 20,
-			max_fine_cv: 49,
-		  }]
-		},
-		{
-		  coarse_cv: 'high',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 50,
-			max_fine_cv: 63,
-		  }]
-		}];
-		
-		let coarseMappings3 = [
-		{
-		  coarse_cv: 'low',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 0,
-			max_fine_cv: 49,
-		  }]
-		},
-		{
-		  coarse_cv: 'medium',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 50,
-			max_fine_cv: 59,
-		  }]
-		},
-		{
-		  coarse_cv: 'high',
-		  value_mappings: [{
-			mapping_type: 'fine_cv',
-			min_fine_cv: 60
-		  }]
-		}];
-		
-		let lockConditions1 = [
-		{
-		  lock_condition_type: 'coarse_cv',
-		  coarse_cvs: ['high']
-		},
-		{
-		  lock_condition_type: 'time',
-		  post_install_time: 86400
-		}];
-		
-		let lockConditions2 = [
-		{
-		  lock_condition_type: 'coarse_cv',
-		  coarse_cvs: ['high']
-		}];
-		
-		let lockConditions3 = [
-		{
-		  lock_condition_type: 'coarse_cv',
-		  coarse_cvs: ['high']
-		}];
-		
-		let window1 = {
-		  fine_cv_mappings: fineMappings,
-		  coarse_cv_mappings: coarseMappings1,
-		  lock_conditions: lockConditions1
-		};
-		
-		let window2 = {
-		  coarse_cv_mappings: coarseMappings2,
-		  lock_conditions: lockConditions2
-		};
-		
-		let window3 = {
-		  coarse_cv_mappings: coarseMappings3,
-		  lock_conditions: lockConditions3
-		};
-		
-		let schema = {
-		  window_one: window1,
-		  window_two: window2,
-		  window_three: window3
-		};
-		
-		let schemaHash = md5(JSON.stringify(schema)).toLowerCase();
+		let schemaHash = md5(JSON.stringify(skanSchema)).toLowerCase();
 
 		if (schemaHash !== lastSchemaHash)
 		{
-			ret['schema'] = schema;
+			ret['schema'] = skanSchema;
 			ret['schema_hash'] = schemaHash;
 		}
 	}
