@@ -17,6 +17,7 @@
             }, {
                 "fine_cv": 2,
                 "value_mappings": [{
+						"mapping_type": "session",
                         "min_session_count": 5
                     }
                 ]
