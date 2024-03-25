@@ -1,0 +1,8 @@
+Install nodemon:
+npm install -g nodemon
+
+Add nodemon to yarn:
+yarn global add nodemon
+
+Start:
+nodemon index.js

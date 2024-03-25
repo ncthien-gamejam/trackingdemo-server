@@ -1,0 +1,24 @@
+fb_mobile_achievement_unlocked
+fb_mobile_activate_app <-- start
+fb_mobile_add_payment_info
+fb_mobile_add_to_cart 
+fb_mobile_add_to_wishlist
+fb_mobile_complete_registration
+fb_mobile_content_view
+fb_mobile_initiated_checkout
+fb_mobile_level_achieved
+fb_mobile_purchase <-- purchase
+fb_mobile_rate
+fb_mobile_search
+fb_mobile_spent_credits
+fb_mobile_tutorial_completion
+AdClick
+AdImpression
+Contact
+CustomizeProduct
+Donate
+FindLocation
+Schedule
+StartTrial
+SubmitApplication
+Subscribe
