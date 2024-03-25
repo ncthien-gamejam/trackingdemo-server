@@ -149,8 +149,7 @@ router.get('/', async function(req, res, next) {
 		{
 			const response = await fetch(coinAPIBaseEndpoint + baseCurrency + '?' + new URLSearchParams({
 				apikey: coinAPIKey,
-				filter_asset_id: cryptoCurrencyCodes.join(','),
-				invert: true
+				filter_asset_id: cryptoCurrencyCodes.join(',')
 			}));
 			
 			let cryptoExchangeData = {};
