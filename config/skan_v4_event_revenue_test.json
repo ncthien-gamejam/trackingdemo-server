@@ -1,0 +1,29 @@
+{
+    "window_one": {
+        "fine_cv_mappings": [{
+                "fine_cv": 0,
+                "value_mappings": [{
+                        "mapping_type": "session"
+                    }
+                ]
+            }, {
+                "fine_cv": 1,
+                "value_mappings": [{
+                        "mapping_type": "event",
+						"event_name": "test_revenue",
+                        "min_revenue": 0.1,
+                        "max_revenue": 0.2
+                    }
+                ]
+            }, {
+                "fine_cv": 2,
+                "value_mappings": [{
+                        "mapping_type": "event",
+						"event_name": "test_revenue",
+                        "min_revenue": 0.2
+                    }
+                ]
+            }
+		]
+    }
+}

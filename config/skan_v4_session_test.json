@@ -1,0 +1,26 @@
+{
+    "window_one": {
+        "fine_cv_mappings": [{
+                "fine_cv": 0,
+                "value_mappings": [{
+                        "mapping_type": "session"
+                    }
+                ]
+            }, {
+                "fine_cv": 1,
+                "value_mappings": [{
+                        "mapping_type": "session",
+                        "min_session_count": 2,
+                        "mx_session_count": 4,
+                    }
+                ]
+            }, {
+                "fine_cv": 2,
+                "value_mappings": [{
+                        "min_session_count": 5
+                    }
+                ]
+            }
+		]
+    }
+}
