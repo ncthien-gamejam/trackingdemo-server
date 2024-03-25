@@ -11,7 +11,7 @@
                 "value_mappings": [{
                         "mapping_type": "session",
                         "min_session_count": 2,
-                        "mx_session_count": 4
+                        "max_session_count": 4
                     }
                 ]
             }, {
