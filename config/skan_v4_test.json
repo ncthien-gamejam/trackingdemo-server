@@ -539,8 +539,8 @@
             }
         ],
         "lock_conditions": [{
-                "lock_condition_type": "coarse_cv",
-                "coarse_cvs": ["high"]
+                "lock_condition_type": "time",
+                "post_install_time": 86400
             }
         ]
     },
