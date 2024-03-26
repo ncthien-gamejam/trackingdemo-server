@@ -14,6 +14,8 @@ import { router as configRouter } from './routes/config.js';
 import { router as skanV3Router } from './routes/skan_v3.js';
 import { router as skanV4Router } from './routes/skan_v4.js';
 
+import { router as skanGoogleRouter } from './routes/skan_google.js';
+
 import { router as sourceRouter } from './routes/source.js';
 import { router as triggerRouter } from './routes/trigger.js';
 import { router as reportRouter } from './routes/report.js';
@@ -44,6 +46,8 @@ app.use("/config", configRouter);
 
 app.use("/skan_v3", skanV3Router);
 app.use("/skan_v4", skanV4Router);
+
+app.use("/skan_google", skanGoogleRouter);
 
 app.use("/source", sourceRouter);
 app.use("/trigger", triggerRouter);
