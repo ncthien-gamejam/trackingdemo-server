@@ -714,7 +714,7 @@ router.get('/', async function(req, res, next) {
 	}
 		
 	let windowThree = skanSchema['window_three'];
-	if ('window_three')
+	if (windowThree)
 	{
 		//console.log("WINDOW THREE");
 		

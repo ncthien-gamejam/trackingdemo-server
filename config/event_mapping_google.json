@@ -1,0 +1,8 @@
+{
+    "__revenue_iap__": "in_app_purchase",
+    "__revenue_ad__": "",
+    "__revenue_crypto__": "",
+	"__revenue__": "purchase",
+	"__session__": "session_start",
+    "test_revenue": "purchase"
+}
