@@ -12,7 +12,8 @@ const clientId = '420137273716-pbc6p4542ipbd4hi72sj6tokk74asgcf.apps.googleuserc
 const clientSecret = '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';
 const refreshToken = '1//04378p8o-bALsCgYIARAAGAQSNwF-L9IrVVgsp7qyUzpmFHEkh7Y1lORHie1wKBM8qsRzewwJ-Y4IZpJ_7ChhPs7lz5l4DEP7f6U';
 
-const SKADNETWORK_CONVERSION_VALUE_SCHEMA_GET = parseTemplate('https://analyticsadmin.googleapis.com/v1alpha/properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema');
+const SKADNETWORK_CONVERSION_VALUE_SCHEMA = parseTemplate('https://analyticsadmin.googleapis.com/v1alpha/properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema');
+const SKADNETWORK_CONVERSION_VALUE_SCHEMA_TARGET = parseTemplate('https://analyticsadmin.googleapis.com/v1alpha/properties/{property_id}/dataStreams/{dataStream}/sKAdNetworkConversionValueSchema/{skadnetworkConversionValueSchema}');
 
 const propertyId = '415249261';
 const dataStream = '7779582138';
@@ -777,7 +778,7 @@ function generateData(skanSchema)
 {
 	let ret = {};
 	
-	ret['name'] = 'properties/' + propertyId + '/dataStreams/' + dataStream + '/sKAdNetworkConversionValueSchema';
+	//ret['name'] = 'properties/' + propertyId + '/dataStreams/' + dataStream + '/sKAdNetworkConversionValueSchema';
 	
 	let fineMappings = null;
 	
@@ -815,22 +816,106 @@ async function setupSkan(accessToken)
 {
 	const authorization = 'Bearer ' + accessToken;
 	
-	const url = SKADNETWORK_CONVERSION_VALUE_SCHEMA_GET.expand({
+	let url = SKADNETWORK_CONVERSION_VALUE_SCHEMA.expand({
 		property_id: propertyId,
 		dataStream: dataStream
 	});
 	
-	const response = await fetch(url,
+	//List schema
+	let response = await fetch(url,
 	{
 		method: 'GET',
 		headers: {
-		  'Authorization': authorization
+			'Authorization': authorization
 		}
 	});  
 	
-	const responseJSON = await response.json();
-	console.log(JSON.stringify(responseJSON));
+	let responseJSON = await response.json();
+	if (!responseJSON)
+	{
+		throw new Error('Can\'t get schema list');
+	}
+	
+	let schemaId = null;
+	
+	const skadnetworkConversionValueSchemas = responseJSON['skadnetworkConversionValueSchemas'];
+	if (skadnetworkConversionValueSchemas && skadnetworkConversionValueSchemas.length > 0) 
+	{
+		const skadnetworkConversionValueSchema = skadnetworkConversionValueSchemas[0];
+		const schemaName = skadnetworkConversionValueSchema['name'];
+		if (schemaName)
+		{
+			const prefix = 'properties/' + propertyId + '/dataStreams/' + dataStream + '/sKAdNetworkConversionValueSchema/';
+			const prefixLength = prefix.length;
+			
+			if (schemaName.substring(0, prefixLength) === prefix)
+			{
+				schemaId = schemaName.substring(prefixLength);
+				
+				if (schemaId)
+				{
+					console.log("FOUND SCHEMA ID " + schemaId);
+				}
+			}
+		}
+	}
+	
+	let data = generateData(skanSchema);
+	if (!schemaId)
+	{
+		console.log("CREATE SCHEMA");
+		
+		//Create schema
+		response = await fetch(url,
+		{
+			method: 'POST',
+			headers: {
+				'Authorization': authorization,
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});  
+		
+		responseJSON = await response.json();
+		if (!responseJSON)
+		{
+			throw new Error('Can\'t create schema');
+		}
+
+		console.log(JSON.stringify(responseJSON));
+	}
+	else
+	{
+		console.log("PATCH SCHEMA");
+		
+		url = SKADNETWORK_CONVERSION_VALUE_SCHEMA_TARGET.expand({
+			property_id: propertyId,
+			dataStream: dataStream,
+			skadnetworkConversionValueSchema: schemaId
+		});
+		
+		response = await fetch(url + "?updateMask=%2A",
+		{
+			method: 'PATCH',
+			headers: {
+				'Authorization': authorization,
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(data)
+		});  
+		
+		responseJSON = await response.json();
+		if (!responseJSON)
+		{
+			throw new Error('Can\'t patch schema');
+		}
+
+		console.log(JSON.stringify(responseJSON));
+	}
 }
+
 
 router.get('/', async function(req, res, next) {
   try {
@@ -856,11 +941,8 @@ router.get('/', async function(req, res, next) {
 		throw new Error('Can\'t get Google access token');
 	}
 	
-	//await setupSkan(accessToken);
+	await setupSkan(accessToken);
 	
-	let data = generateData(skanSchema);
-	console.log(JSON.stringify(data));
-		  
 	res.sendStatus(200);
   } catch (err) {
     console.error(`Error while processing trigger request `, err.message);
