@@ -1,0 +1,516 @@
+{
+	"skan_version": 3,
+	"lock_time": 86400,
+    "mappings": [{
+            "conversion_value": 0,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "max_revenue": 0.01
+                }
+            ]
+        }, {
+            "conversion_value": 1,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.01,
+                    "max_revenue": 0.02
+                }
+            ]
+        }, {
+            "conversion_value": 2,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.02,
+                    "max_revenue": 0.03
+                }
+            ]
+        }, {
+            "conversion_value": 3,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.03,
+                    "max_revenue": 0.04
+                }
+            ]
+        }, {
+            "conversion_value": 4,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.04,
+                    "max_revenue": 0.05
+                }
+            ]
+        }, {
+            "conversion_value": 5,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.05,
+                    "max_revenue": 0.06
+                }
+            ]
+        }, {
+            "conversion_value": 6,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.06,
+                    "max_revenue": 0.07
+                }
+            ]
+        }, {
+            "conversion_value": 7,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.07,
+                    "max_revenue": 0.08
+                }
+            ]
+        }, {
+            "conversion_value": 8,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.08,
+                    "max_revenue": 0.09
+                }
+            ]
+        }, {
+            "conversion_value": 9,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.09,
+                    "max_revenue": 0.1
+                }
+            ]
+        }, {
+            "conversion_value": 10,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.1,
+                    "max_revenue": 0.11
+                }
+            ]
+        }, {
+            "conversion_value": 11,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.11,
+                    "max_revenue": 0.12
+                }
+            ]
+        }, {
+            "conversion_value": 12,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.12,
+                    "max_revenue": 0.13
+                }
+            ]
+        }, {
+            "conversion_value": 13,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.13,
+                    "max_revenue": 0.14
+                }
+            ]
+        }, {
+            "conversion_value": 14,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.14,
+                    "max_revenue": 0.15
+                }
+            ]
+        }, {
+            "conversion_value": 15,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.15,
+                    "max_revenue": 0.16
+                }
+            ]
+        }, {
+            "conversion_value": 16,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.16,
+                    "max_revenue": 0.17
+                }
+            ]
+        }, {
+            "conversion_value": 17,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.17,
+                    "max_revenue": 0.18
+                }
+            ]
+        }, {
+            "conversion_value": 18,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.18,
+                    "max_revenue": 0.19
+                }
+            ]
+        }, {
+            "conversion_value": 19,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.19,
+                    "max_revenue": 0.2
+                }
+            ]
+        }, {
+            "conversion_value": 20,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.2,
+                    "max_revenue": 0.21
+                }
+            ]
+        }, {
+            "conversion_value": 21,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.21,
+                    "max_revenue": 0.22
+                }
+            ]
+        }, {
+            "conversion_value": 22,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.22,
+                    "max_revenue": 0.23
+                }
+            ]
+        }, {
+            "conversion_value": 23,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.23,
+                    "max_revenue": 0.24
+                }
+            ]
+        }, {
+            "conversion_value": 24,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.24,
+                    "max_revenue": 0.25
+                }
+            ]
+        }, {
+            "conversion_value": 25,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.25,
+                    "max_revenue": 0.26
+                }
+            ]
+        }, {
+            "conversion_value": 26,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.26,
+                    "max_revenue": 0.27
+                }
+            ]
+        }, {
+            "conversion_value": 27,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.27,
+                    "max_revenue": 0.28
+                }
+            ]
+        }, {
+            "conversion_value": 28,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.28,
+                    "max_revenue": 0.29
+                }
+            ]
+        }, {
+            "conversion_value": 29,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.29,
+                    "max_revenue": 0.3
+                }
+            ]
+        }, {
+            "conversion_value": 30,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.3,
+                    "max_revenue": 0.31
+                }
+            ]
+        }, {
+            "conversion_value": 31,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.31,
+                    "max_revenue": 0.32
+                }
+            ]
+        }, {
+            "conversion_value": 32,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.32,
+                    "max_revenue": 0.33
+                }
+            ]
+        }, {
+            "conversion_value": 33,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.33,
+                    "max_revenue": 0.34
+                }
+            ]
+        }, {
+            "conversion_value": 34,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.34,
+                    "max_revenue": 0.35
+                }
+            ]
+        }, {
+            "conversion_value": 35,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.35,
+                    "max_revenue": 0.36
+                }
+            ]
+        }, {
+            "conversion_value": 36,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.36,
+                    "max_revenue": 0.37
+                }
+            ]
+        }, {
+            "conversion_value": 37,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.37,
+                    "max_revenue": 0.38
+                }
+            ]
+        }, {
+            "conversion_value": 38,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.38,
+                    "max_revenue": 0.39
+                }
+            ]
+        }, {
+            "conversion_value": 39,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.39,
+                    "max_revenue": 0.4
+                }
+            ]
+        }, {
+            "conversion_value": 40,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.4,
+                    "max_revenue": 0.41
+                }
+            ]
+        }, {
+            "conversion_value": 41,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.41,
+                    "max_revenue": 0.42
+                }
+            ]
+        }, {
+            "conversion_value": 42,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.42,
+                    "max_revenue": 0.43
+                }
+            ]
+        }, {
+            "conversion_value": 43,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.43,
+                    "max_revenue": 0.44
+                }
+            ]
+        }, {
+            "conversion_value": 44,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.44,
+                    "max_revenue": 0.45
+                }
+            ]
+        }, {
+            "conversion_value": 45,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.45,
+                    "max_revenue": 0.46
+                }
+            ]
+        }, {
+            "conversion_value": 46,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.46,
+                    "max_revenue": 0.47
+                }
+            ]
+        }, {
+            "conversion_value": 47,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.47,
+                    "max_revenue": 0.48
+                }
+            ]
+        }, {
+            "conversion_value": 48,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.48,
+                    "max_revenue": 0.49
+                }
+            ]
+        }, {
+            "conversion_value": 49,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.49,
+                    "max_revenue": 0.5
+                }
+            ]
+        }, {
+            "conversion_value": 50,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.5,
+                    "max_revenue": 0.51
+                }
+            ]
+        }, {
+            "conversion_value": 51,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.51,
+                    "max_revenue": 0.52
+                }
+            ]
+        }, {
+            "conversion_value": 52,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.52,
+                    "max_revenue": 0.53
+                }
+            ]
+        }, {
+            "conversion_value": 53,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.53,
+                    "max_revenue": 0.54
+                }
+            ]
+        }, {
+            "conversion_value": 54,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.54,
+                    "max_revenue": 0.55
+                }
+            ]
+        }, {
+            "conversion_value": 55,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.55,
+                    "max_revenue": 0.56
+                }
+            ]
+        }, {
+            "conversion_value": 56,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.56,
+                    "max_revenue": 0.57
+                }
+            ]
+        }, {
+            "conversion_value": 57,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.57,
+                    "max_revenue": 0.58
+                }
+            ]
+        }, {
+            "conversion_value": 58,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.58,
+                    "max_revenue": 0.59
+                }
+            ]
+        }, {
+            "conversion_value": 59,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.59,
+                    "max_revenue": 0.6
+                }
+            ]
+        }, {
+            "conversion_value": 60,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.6,
+                    "max_revenue": 0.61
+                }
+            ]
+        }, {
+            "conversion_value": 61,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.61,
+                    "max_revenue": 0.62
+                }
+            ]
+        }, {
+            "conversion_value": 62,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.62,
+                    "max_revenue": 0.63
+                }
+            ]
+        }, {
+            "conversion_value": 63,
+            "value_mappings": [{
+                    "mapping_type": "revenue",
+                    "min_revenue": 0.63
+                }
+            ]
+        }
+    ]
+}
