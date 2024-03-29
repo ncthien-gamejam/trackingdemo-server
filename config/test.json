@@ -12,7 +12,8 @@
 		"linkedInAppId": "",
 		"qqAppId": "",
 		"weChatAppId": "",
-		"tikTokAppId": ""
+		"tikTokAppId": "",
+		"snapAppId": ""
 	},
 	"androidSettings":	
 	{
