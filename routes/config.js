@@ -46,7 +46,7 @@ const coinAPIKey = '6C4A71C7-12D1-4D65-9493-EE06505079E4';
 const exchangeRatePeriod = 3 * 60 * 60; //3 hours
 const cryptoExchangeRatePeriod = 6 * 60 * 60; //6 hours
 
-const skanSchema = JSON.parse(fs.readFileSync('./config/skan_v4_test.json'));
+const skanSchema = JSON.parse(fs.readFileSync('./config/skan_v3_test.json'));
 const sdkConfig = JSON.parse(fs.readFileSync('./config/test.json'));
 
 router.get('/', async function(req, res, next) {
