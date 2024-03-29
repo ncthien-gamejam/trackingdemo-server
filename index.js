@@ -16,6 +16,8 @@ import { router as skanV4Router } from './routes/skan_v4.js';
 
 import { router as skanGoogleRouter } from './routes/skan_google.js';
 
+import { router as skanTiktokCsvRouter } from './routes/skan_tiktok_csv.js';
+
 import { router as sourceRouter } from './routes/source.js';
 import { router as triggerRouter } from './routes/trigger.js';
 import { router as reportRouter } from './routes/report.js';
@@ -48,6 +50,8 @@ app.use("/skan_v3", skanV3Router);
 app.use("/skan_v4", skanV4Router);
 
 app.use("/skan_google", skanGoogleRouter);
+
+app.use("/skan_tiktok_csv", skanTiktokCsvRouter);
 
 app.use("/source", sourceRouter);
 app.use("/trigger", triggerRouter);
