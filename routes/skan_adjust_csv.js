@@ -4,12 +4,14 @@ import * as fs from 'fs';
 
 const MAX_REVENUE = 10000.0;
 
+const AD_REVENUE_SOURCES = [];
+
 const router = express.Router();
 
 const skanSchema = JSON.parse(fs.readFileSync('./config/skan_v4_test.json'));
 
-const eventMapping = JSON.parse(fs.readFileSync('./config/event_mapping_tiktok.json'));
-function getEventMapping(eventName)
+const eventMapping = JSON.parse(fs.readFileSync('./config/adjust_token_mapping.json'));
+function getEventToken(eventName)
 {
 	if (!eventName) return null;
 	
@@ -78,27 +80,34 @@ function updateItem(item, eventId, valueMapping)
 	}
 	else if (mappingType === 'event')
 	{
-		eventName = getEventMapping(valueMapping['event_name']);
-		if (!eventName) return;
+		let token = getEventToken(valueMapping['event_name']);
+		if (!token) return;
+		
+		item[getFinalFieldName('eventToken', eventId)] = token;
 
 		let revenueMin = valueMapping['min_revenue'];
 		if (revenueMin)
 		{
-			//TODO
+			item[getFinalFieldName('eventRevenueMin', eventId)] = revenueMin;
 		}
 		
 		let revenueMax = valueMapping['max_revenue'];
 		if (revenueMax)
 		{
-			//TODO
+			item[getFinalFieldName('eventRevenueMax', eventId)] = revenueMax;
 		}
-	}
-	else if (mappingType === 'session')
-	{
-		eventName = getEventMapping('__session__');
-		if (!eventName) return;
 		
-		//TODO
+		let countMin = valueMapping['min_event_count'];
+		if (countMin)
+		{
+			item[getFinalFieldName('eventCountMin', eventId)] = countMin;
+		}
+		
+		let countMax = valueMapping['max_event_count'];
+		if (countMax)
+		{
+			item[getFinalFieldName('eventCountMax', eventId)] = countMax;
+		}
 	}
 }
 
@@ -127,6 +136,17 @@ router.get('/', async function(req, res, next) {
 				if (!valueMappings) return null;
 				
 				let item = {'cv': value};
+				
+				let numAdRevenueSources = AD_REVENUE_SOURCES.length;
+				
+				if (numAdRevenueSources == 1)
+				{
+					item['adRevenueSources'] = AD_REVENUE_SOURCES[0];
+				}
+				else if (numAdRevenueSources > 1)
+				{
+					item['adRevenueSources'] = '\"' + AD_REVENUE_SOURCES.join(', ') + '\"';
+				}
 				
 				let numValueMappings = Math.min(valueMappings.length, 4);
 				for (let j = 0; j < numValueMappings; ++j)
